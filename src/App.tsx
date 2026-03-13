@@ -1,5 +1,4 @@
 import { useCallback, useMemo, useState } from 'react';
-import './App.css';
 import { normalize } from './utils/normalize';
 import { EMPLOYEES } from './data/employees';
 import type { Employee } from './data/types';
@@ -57,7 +56,7 @@ function App() {
   }, [searchTerm]);
 
   return (
-    <div id="center">
+    <div style={styles.container}>
       <input
         style={styles.input}
         placeholder="Beka, SR Face Shave, Wax..."
@@ -76,9 +75,10 @@ export default App;
 
 const styles: Record<string, React.CSSProperties> = {
   container: {
-    backgroundColor: '#0b3b12',
-    minHeight: '100vh',
-    padding: 12,
+    display: 'flex',
+    flexDirection: 'column',
+    padding: 20,
+    gap: 12,
   },
   list: {
     paddingTop: 12,
